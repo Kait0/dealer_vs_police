@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="AppBaseTheme" parent="android:Theme.Holo.Light.DarkActionBar">
+        <!-- API 14 theme customizations can go here. -->
+        <item name="android:colorPrimary">@android:color/holo_green_dark</item>
+        <item name="android:colorPrimaryDark">@android:color/holo_green_dark</item>
+        <item name="android:textColorPrimary">@android:color/primary_text_dark</item>
+    </style>
+</resources>

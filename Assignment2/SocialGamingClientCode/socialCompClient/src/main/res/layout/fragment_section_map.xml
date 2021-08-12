@@ -1,0 +1,39 @@
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+        <Button
+            android:id="@+id/refresh_map_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:text="@string/refresh_map" />
+
+        <Button
+            android:id="@+id/catchButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:text="Catch dealer" />
+
+        <TextView
+            android:id="@+id/catchProcess"
+            android:layout_width="match_parent"
+            android:layout_height="29dp"
+            android:text="Catch Progress: 0%"
+            android:textSize="23dp"/>
+        <TextView
+            android:id="@+id/fledProcess"
+            android:layout_width="match_parent"
+            android:layout_height="29dp"
+            android:text="Fled Progress: 0%"
+            android:textSize="23dp"/>
+
+        <fragment
+            android:id="@+id/map"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            class="com.google.android.gms.maps.SupportMapFragment" />
+</LinearLayout>

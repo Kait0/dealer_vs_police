@@ -1,0 +1,11 @@
+*.class
+*.log
+
+# sbt specific
+.idea
+*.iml
+.gradle
+build
+local.properties
+socialCompClient/build
+.DS_Store

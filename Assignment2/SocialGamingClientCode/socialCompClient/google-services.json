@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "63906122876",
+    "firebase_url": "https://social-gaming-app.firebaseio.com",
+    "project_id": "social-gaming-app",
+    "storage_bucket": "social-gaming-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:63906122876:android:12195ca74d42fa36",
+        "android_client_info": {
+          "package_name": "de.tum.socialcomp.android"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "63906122876-at8euetbatj9es6e3m31d0o3ateu6u0f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCXZ35lEdRqW1hw9c_i_z_uvcAPstXx-8E"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

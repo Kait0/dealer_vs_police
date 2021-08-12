@@ -1,0 +1,76 @@
+﻿Functions that are listed more than once were written and/or modified by more than one person.
+
+
+Vadim:
+
+	Server:
+		HomeController.java: joinUser()
+		HomeController.java: getTeam()
+		HomeController.java: requestDealData()
+		Game.java: joinUserToTeam()
+
+	Client:
+		MainActivity.java: updateGameTab()
+		GameDialogs.java: createTeamDialog()
+		GameDialogs.java: createPopup()
+		GameDialogs.java: createSellMessage()
+		GameSectionFragment.java
+		layout_chat.xml
+		layout_deal.xml
+
+Sebastian:
+
+	Client:
+		servip.xml
+
+	Server:
+		[everything that does something with the database(should be included below though)]
+		CatchThread.java
+		Fence.java
+		FenceRepository.java
+		User.java : everything that wasn’t there yet in example project
+		UserRepository.java: everything that wasn’t there yet in example project
+		HomeController.java:
+			index()
+			getDistanceToUser()
+			getNearbyFences()
+			buyDrugs()
+			sellInformation()
+			sellDrugs()
+			Catch()
+			getUserData()
+
+Bernhard:
+
+	Client:
+		MainActivity.java
+			processGameMessageOnUIThread() //The catch part
+		MapSectionFragment.java
+			//everything in this class that isn't from the example project
+		fragment_section_map.xml
+			//everything that isn't from the example project
+	Server:
+		Debugging
+	
+Jeremias:
+	Server: HomeController.java:
+			getNearbyFences()
+			buyDrugs()
+			sellDrugs()
+			Catch()
+		Routes:
+			HTTP-Requests for the above methods
+		CatchThread.java 
+		UserRpository.java:
+			getNearestDealer()
+
+Matija:
+    Client: MainSectionFragment.java:
+            //everything that isn't from the example project
+                sonst alles bearbeitet
+            fragment_section_launchpad.xml:
+                design erstellt
+            Hehler Icon erstellt
+            MapSectionFragment.java:
+                kleiner BugFix
+

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="de.tum.socialcomp.android"
+    android:versionCode="1"
+    android:versionName="1.0">
+
+    <uses-sdk
+        android:minSdkVersion="9"
+        android:targetSdkVersion="18" />
+    {% includecode
+    github_path="firebase/quickstart-android/messaging/app/src/main/AndroidManifest.xml"
+    region_tag="firebase_service" adjust_indentation="auto" github_link=True %}
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <uses-permission android:name="com.fssd.spot.permission.MAPS_RECEIVE" />
+
+    <!-- Permissions necessary for Location Management -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <!-- Permissions necessary for Google's Cloud Messaging Service -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+
+    <permission
+        android:name="de.tum.socialcomp.android.C2D_MESSAGE"
+        android:protectionLevel="signature" />
+    <permission
+        android:name="com.fssd.spot.permission.MAPS_RECEIVE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="de.tum.socialcomp.android.C2D_MESSAGE" />
+
+    <!-- Permissions necessary for OSMDroid -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".LoginScreen"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.DeviceDefault.Light.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.DeviceDefault.Light">
+        </activity>
+
+        <!-- TODO: This must be replaced with your key, see the instruction Facebook, hat Basti schon gemacht
+        will give you when creating a new application -->
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/app_id" />
+
+
+        <!-- For Google Maps Service -->
+        <!-- TODO: Insert your API key from the developerconsole here. Done but not tested -->
+        <meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="AIzaSyCyikB0nz8LTev96ckQEvZ1-oEbRLB8Soo" />
+
+        <!-- register the Firebase Messages and ID listener here -->
+        <service android:name=".webservices.FirebaseListener">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <service android:name=".webservices.FirebaseIdManager">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+
+        {% includecode
+        github_path="firebase/quickstart-android/messaging/app/src/main/AndroidManifest.xml"
+        region_tag="fcm_default_icon" adjust_indentation="auto" github_link=True %}
+
+    </application>
+
+</manifest>

@@ -1,0 +1,41 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                           controllers.HomeController.index()
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.at(path="/public", file)
+
+# User functions: login, get users and update positions
+POST /users/:faceBookAuthToken/:firebaseCDSToken/:longitude/:latitude/login	controllers.HomeController.loginUser(faceBookAuthToken: String, firebaseCDSToken: String, longitude: Double, latitude: Double)
+POST /users/:facebookID/getNearbyUsers controllers.HomeController.getNearbyUsers(facebookID: String)
+GET /users/:facebookID/getNearbyFences controllers.HomeController.getNearbyFences(facebookID: String)
+GET /users/:fID/getUserData controllers.HomeController.getUserData(fID: String)
+
+# Positioning
+POST /positions/:facebookId/:longitude/:latitude/update controllers.HomeController.updateUserLocation(facebookId: String, longitude: Double, latitude: Double)
+
+# Game requests and event triggering
+POST /games/:facebookID/requestNew controllers.HomeController.requestNewGame(facebookID: String)
+POST /games/:gameID/:facebookID/abort controllers.HomeController.abortGame(gameID: String, facebookID: String)
+POST /games/:gameID/:facebookID/accept controllers.HomeController.acceptGame(gameID: String, facebookID: String)
+POST /games/:gameID/:facebookID/interaction controllers.HomeController.interactionInGame(gameID: String, facebookID: String)
+POST /games/:userFacebookID/:recipentFacebookID/poke controllers.HomeController.poke(userFacebookID: String, recipentFacebookID: String)
+
+POST /games/deal/data/:userFacebookID controllers.HomeController.requestDealData(userFacebookID: String)
+POST /games/:facebookID/:amount/buyDrugs controllers.HomeController.buyDrugs(facebookID: String, amount: Integer)
+POST /games/:PfacebookID/:DfacebookID/getDistanceToUser controllers.HomeController.getDistanceToUser(PfacebookID: String, DfacebookID: String)
+POST /games/:facebookID/:amount/sellDrugs controllers.HomeController.sellDrugs(facebookID: String, amount: Integer)
+POST /games/:facebookID/:amount/sellInformation controllers.HomeController.sellInformation(facebookID: String, amount: Integer)
+POST /games/:PFacebookID/Catch controllers.HomeController.Catch(PFacebookID: String)
+
+#Teamzuteilung
+POST /users/:userFacebookID/team controllers.HomeController.joinUser(userFacebookID: String)
+POST /users/:userFacebookID/teamget controllers.HomeController.getTeam(userFacebookID: String)
+
